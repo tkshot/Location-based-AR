@@ -12,7 +12,7 @@
         position: fixed;
         z-index: 10000;
         background-color: #e6e6fa;
-        padding: 30px;
+        padding: 10px;
         top: 0;
         left: 0;
         display: block;
@@ -51,8 +51,7 @@
   </a-scene>
   <script>
       window.addEventListener('load', () => {
-        const distanceMsg = document.querySelector('[gps-entity-place]').getAttribute('distanceMsg');
-        console.log(distanceMsg); 
+         const text = document.getElementById('text');
         text.addEventListener('gps-entity-place-update-position', (event) => {
           document.getElementById('debug').textContent = `ATO${event.detail.distance}m`;
           text.setAttribute('value', text.getAttribute('distanceMsg') + ' left');
