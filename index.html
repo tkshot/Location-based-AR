@@ -34,7 +34,7 @@
             gps-entity-place="latitude: 36.57299436613212; longitude: 140.63474959534113;"
    ></a-text>
    <a-text
-        id="text"
+        id="distanceMsg"
         value=""
         look-at="[gps-camera]"
         scale="30 30 30"
@@ -49,7 +49,7 @@
         const distanceMsg = document.querySelector('[gps-entity-place]').getAttribute('distanceMsg');
         console.log(distanceMsg); 
         text.addEventListener('gps-entity-place-update-positon', (event) => {
-          document.getElementById('debug').textContent = `Distance${event.detail.distance}m`;
+          document.getElementById('debug').textContent = `ATO${event.detail.distance}m`;
           text.setAttribute('value', text.getAttribute('distanceMsg') + ' left');
         });
       });
